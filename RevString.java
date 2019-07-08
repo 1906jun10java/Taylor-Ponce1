@@ -5,6 +5,7 @@ public class RevString {
 
 		System.out.println("Is it a palindrome ?!" + isPalindrome("senilefelines"));
 		System.out.println("what is this reversed "+reverse("lean"));
+		System.out.println("Hey look it's recursion...I think.."+funkyFunction(10));
 	}
 	public static boolean isPalindrome(String str) {
 		boolean pal = false;
@@ -31,6 +32,23 @@ public class RevString {
 			retweet += str.charAt(x);
 		}
 		return retweet;
+			}
 	}
-}
+	public static int funkyFunction(int y) { // recursion method
+		if (y == 1 || y == 0) {
+			return 1;
+		}
+		return y * funkyFunction(y - 1); // changed from addition to multiplication or whatever operation 
+	
+ // recursion will run and will call itself depending on the input given within the method ( 10 ...9...8 etc )
+	public static String reverseFunkyFunction(String str, int y) {
+		String funky = "";
+		funky += str.charAt(y);
+	{
+			reverseFunkyFunction(funky, y);
+		}
+		return funky;
+
+	}
+}	
 
